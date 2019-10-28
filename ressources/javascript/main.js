@@ -6,7 +6,7 @@ var data = (localStorage.getItem('todoList')) ? JSON.parse(localStorage.getItem(
 
 // Remove and complete icon in SVG format
 var removeSVG = //Image de la petite poubelle
-var completeSVG = //Image du petit plus
+var completeSVG = //Image du petit validé
 
 renderTodoList();
 
