@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
 body, input button {
-	font-family: 'Roboto', sans-serif;
-
+	font-family:'Roboto', sans-serif;
 }
 
 body {
@@ -24,10 +23,9 @@ header {
 	left: 0;
 	z-index: 5;
 	background: #25b99a;
-	box-shadow: : 0px, 2px, 4px, rgba(44, 62, 80, 0, 15);
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-
+	box-shadow: : 0px, 2px, 4px, rgba(44, 62, 80, 0.15);
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
 }
 
 header input {
@@ -38,14 +36,14 @@ header input {
 	font-size: 15px;
 	font-weight: 400;
 	text-indent: 18px;
-	padding: 0 60px 0 0;
-	background: rgba(255, 255, 255, 0, 2);
+	/* Padding sert à ce que l'écriture s'arrête un peu avant la fin, pour faire plus joli */
+	padding: 0 50px 5px 0;
+	background:rgba(255, 255, 255, 0.2);
+	/* Permet d'avoir les coins à droite completement rond pour coller avec le bouton rond blanc */
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 	border-top-right-radius: 25px;
 	border-bottom-right-radius: 25px;
-
-	border-radius: 5px;
 	border: 0px;
 	box-shadow: none;
 	outline: none;
@@ -59,7 +57,6 @@ header input {
 
 header input::-webkit-input-placeholder {
 	color: rgba(255, 255, 255, 0.75);
-
 }
 
 header input:-moz-input-placeholder {
@@ -78,8 +75,8 @@ header button {
 	width: 50px;
 	height: 50px;
 	position: absolute;
-	top: 15px;
-	right: 15px;
+	top: 20px;
+	right: 50px;
 	z-index: 2;
 	border-radius: 25px;
 	background: #fff;
@@ -115,15 +112,14 @@ header button svg .fill {
 }
 
 ul.todo {
-	width: 100%;
+	width: 85%;
 	float: left ;
-
 }
 
 ul.todo li {
 	width: 100%;
 	min-height: 50%;
-	float:left;
+	float: left;
 	font-size: 14px;
 	font-weight: 500;
 	color: #444;
@@ -132,7 +128,7 @@ ul.todo li {
 	background: #fff;
 	border-radius: 5px;
 	position: relative;
-	box-shadow: 0px, 1px, 2px, rgba(44, 62, 80, 0, 10);
+	box-shadow: 0px, 1px, 2px, rgba(44, 62, 80, 0.10);
 	margin: 0 0 10px 0;
 	padding: 14px 100px 14px 14px;
 }
@@ -167,28 +163,29 @@ ul.todo li .buttons button {
 	appearance: none;
 }
 
+/* barre au milieu pour séparer l'icone poubelle et l'icone validé */
 ul.todo li .buttons button:last-of-type:before {
 	content:'';
 	width: 1px;
-	height:30px;
+	height:40px;
 	position: absolute;
-	top: 10px;
-	left: 0;
-	background: #edf0f1;
+	top: -45px;
+	left: 50px;
+	background: #000000;
 }
 
 ul.todo li .buttons button svg {
 	width: 22px;
 	height: 22px;
 	position: absolute;
-	top: 50px;
-	left: 50px;
+	top: 50%;
+	left: 50%;
 	margin: -11px 0 0 -11px;
 }
 
 ul.todo li .buttons button.complete svg {
 	border-radius: : 11px;
-	border: 1.5px solid #25B99A;
+	border: 1.5px solid #25b99a;
 
 	-webkit-transition:fill 0.2s ease;
 	-moz-transition:fill 0.2s ease;
@@ -214,7 +211,7 @@ ul.todo#completed li .buttons button.complete svg .fill {
 	fill: #fff;
 }
 
-ul.todo li .button svg .fill {
+ul.todo li .buttons button svg .fill {
 	-webkit-transition:fill 0.2s ease;
 	-moz-transition:fill 0.2s ease;
 	-ms-transition: fill 0.2s ease;
@@ -222,13 +219,14 @@ ul.todo li .button svg .fill {
 	transition: fill 0.2 ease;
 }
 
+/* Bouton croix un peu grisé */
 ul.todo li .buttons button.remove svg .fill {
 	fill: #c0cecb;
-
 }
 
+/* Bouton croix rouge quand on passe la souris dessus */
 ul.todo li .buttons button.remove:hover svg .fill {
-	fill: #c85656;
+	fill: #e85656;
 }
 
 ul.todo li .buttons button.complete svg .fill {
